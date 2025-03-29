@@ -31,7 +31,7 @@ async function downloadTwibbon() {
         let img = await loadImage(twibbonImg.src);
         ctx.drawImage(img, 0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
-        ctx.fillStyle = "#2887bf";
+        ctx.fillStyle = "#ffde59";
         ctx.textAlign = "center";
 
         ctx.font = "bold 30px Gotham, Montserrat, sans-serif";
