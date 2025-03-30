@@ -31,14 +31,17 @@ async function downloadTwibbon() {
         let img = await loadImage(twibbonImg.src);
         ctx.drawImage(img, 0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
+        // Pastikan font sudah dimuat sebelum menggambar teks
+        await document.fonts.ready;
+
         ctx.fillStyle = "#ffde59";
         ctx.textAlign = "center";
 
-        ctx.font = "bold 30px Gotham, Montserrat, sans-serif";
-        const nameY = CANVAS_SIZE - 120;
+        ctx.font = "bold 30px 'Montserrat', sans-serif"; // Gunakan kutip untuk memastikan font diterapkan
+        const nameY = CANVAS_SIZE - 100;
         ctx.fillText(inputName.value || "Nama", CANVAS_SIZE / 2, nameY);
 
-        ctx.font = "20px Gotham, Montserrat, sans-serif";
+        ctx.font = "20px 'Montserrat', sans-serif"; // Gunakan kutip juga di sini
         const positionY = nameY + 30;
         ctx.fillText(inputPosition.value || "Keterangan", CANVAS_SIZE / 2, positionY);
 
@@ -52,3 +55,4 @@ async function downloadTwibbon() {
         alert(error.message);
     }
 }
+
