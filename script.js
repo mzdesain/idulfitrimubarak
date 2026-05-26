@@ -47,7 +47,7 @@ async function downloadTwibbon() {
 
         let link = document.createElement("a");
         link.href = canvas.toDataURL("image/png");
-        link.download = "Tahniah Idulfitri 1446 H.png";
+        link.download = "Tahniah Iduladha 1447 H.png";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
